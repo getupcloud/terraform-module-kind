@@ -1,4 +1,5 @@
 variable "name" {
+  description = "Kind cluster name"
   default = "kind"
 }
 variable "kubernetes_version" {
@@ -6,10 +7,12 @@ variable "kubernetes_version" {
 }
 
 variable "kubeconfig" {
+  description = "Path for default kubeconfig"
   default = "~/.kube/config"
 }
 
 variable "kind_config" {
+  description = "Path for kind config file"
   default = "./kind.yaml"
 }
 
