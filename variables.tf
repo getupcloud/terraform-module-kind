@@ -1,4 +1,5 @@
 variable "name" {
+  description = "Kind cluster name"
   default = "kind"
 }
 variable "kubernetes_version" {
@@ -6,14 +7,17 @@ variable "kubernetes_version" {
 }
 
 variable "kubeconfig" {
+  description = "Path for default kubeconfig"
   default = "~/.kube/config"
 }
 
 variable "kind_config" {
+  description = "Path for kind config file"
   default = "./kind.yaml"
 }
 
 variable "kind_cluster_create" {
+  description = "Script to create the kind cluster"
   type    = string
   default = <<-EOF
     # create cluster
@@ -43,6 +47,7 @@ variable "kind_cluster_create" {
 }
 
 variable "kind_cluster_read" {
+  description = "Script to read state of the kind cluster"
   type    = string
   default = <<-EOF
     # read cluster
@@ -67,6 +72,7 @@ variable "kind_cluster_read" {
 }
 
 variable "kind_cluster_delete" {
+  description = "Script to delete the kind cluster"
   type    = string
   default = <<-EOF
     # delete cluster
