@@ -3,6 +3,7 @@ variable "name" {
   type        = string
   default     = "kind"
 }
+
 variable "kubernetes_version" {
   description = "Kubernetes version"
   type        = string
