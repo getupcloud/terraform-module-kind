@@ -1,3 +1,4 @@
+# version 2.0
 locals {
   kubeconfig = abspath(pathexpand(var.kubeconfig))
 

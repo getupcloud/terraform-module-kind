@@ -1,3 +1,4 @@
+# version 2.0
 resource "kind_cluster" "default" {
   name            = var.name
   kubeconfig_path = local.kubeconfig

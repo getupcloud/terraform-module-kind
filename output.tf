@@ -1,3 +1,4 @@
+# version 2.0
 output "name" {
   value = var.name
 }

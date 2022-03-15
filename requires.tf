@@ -1,3 +1,4 @@
+# version 2.0
 terraform {
   required_providers {
     kind = {
@@ -7,9 +8,9 @@ terraform {
   }
 }
 
-provider "kind" {
-  # Configuration options
-}
+# provider "kind" {
+#   # Configuration options
+# }
 
 # terraform {
 #   required_providers {
