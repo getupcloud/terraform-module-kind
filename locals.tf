@@ -12,6 +12,6 @@ locals {
     "1.14" : "kindest/node:v1.14.10@sha256:3fbed72bcac108055e46e7b4091eb6858ad628ec51bf693c21f5ec34578f6180"
   }
 
-  kind_image  = lookup(local.kind_image_versions, var.kubernetes_version)
+  kind_image = lookup(local.kind_image_versions, var.kubernetes_version)
   # kind_config = templatefile("${path.module}/${var.kind_config}.tpl", { kind_image = local.kind_image })
 }

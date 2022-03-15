@@ -1,29 +1,29 @@
 resource "kind_cluster" "default" {
-  name = var.name
+  name            = var.name
   kubeconfig_path = local.kubeconfig
-  wait_for_ready = true
+  wait_for_ready  = true
   kind_config {
-    kind = "Cluster"
+    kind        = "Cluster"
     api_version = "kind.x-k8s.io/v1alpha4"
 
     node {
-      role = "control-plane"
+      role  = "control-plane"
       image = local.kind_image
     }
 
     node {
-      role = "worker"
+      role  = "worker"
       image = local.kind_image
       kubeadm_config_patches = [
-          "kind: JoinConfiguration\nnodeRegistration:\n  kubeletExtraArgs:\n    node-labels: \"role=app\"\n"
+        "kind: JoinConfiguration\nnodeRegistration:\n  kubeletExtraArgs:\n    node-labels: \"role=app\"\n"
       ]
     }
 
     node {
-      role = "worker"
+      role  = "worker"
       image = local.kind_image
       kubeadm_config_patches = [
-          "kind: JoinConfiguration\nnodeRegistration:\n  kubeletExtraArgs:\n    node-labels: \"role=infra\"\n"
+        "kind: JoinConfiguration\nnodeRegistration:\n  kubeletExtraArgs:\n    node-labels: \"role=infra\"\n"
       ]
     }
   }
