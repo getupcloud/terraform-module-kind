@@ -13,5 +13,5 @@ locals {
   }
 
   kind_image  = lookup(local.kind_image_versions, var.kubernetes_version)
-  kind_config = templatefile("${path.module}/${var.kind_config}.tpl", { kind_image = local.kind_image })
+  # kind_config = templatefile("${path.module}/${var.kind_config}.tpl", { kind_image = local.kind_image })
 }
