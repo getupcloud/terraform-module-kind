@@ -1,4 +1,3 @@
-# version 2.0
 VERSION:=2.0
 
 test: fmt init validate
